@@ -23,4 +23,8 @@ storiesListItem.propTypes = {
     stories: PropTypes.object.isRequired
 }
 
+<<<<<<< HEAD
 export default storiesListItem
+=======
+export default storiesListItem
+>>>>>>> 868136a3cea7c0a8edde25cc6f48979b8d875be7
