@@ -45,11 +45,11 @@ function App() {
               path={`/id/:id`}
               render={({ match }) => {
                 return fetchedData[match.params.id] ? <stories
-                  pet={fetchedData[match.params.id]}
+                  stories={fetchedData[match.params.id]}
                 /> : <Error/>
               }}
             />
-            <Route path="/storieslist" exact><storiesList stories={Object.values(fetchedData)} /></Route>
+            <Route path="/storiesList" exact><storiesList stories={Object.values(fetchedData)} /></Route>
             <Route component={Error} />
           </Switch>
         </div>

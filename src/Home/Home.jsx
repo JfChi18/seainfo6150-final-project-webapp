@@ -16,7 +16,7 @@ const Home = (props) => {
     
                 </div>
   
-                <Link className={style.moreBtn} to="/petlist"><span>Learn More</span></Link>
+                <Link className={style.moreBtn} to="/storieslist"><span>Learn More</span></Link>
             </div>
 
             <div className={style.homeCenter}>
