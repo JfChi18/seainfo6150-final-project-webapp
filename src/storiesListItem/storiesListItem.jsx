@@ -1,26 +1,26 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import style from "./PetListItem.module.css";
+import style from "./storiesListItem.css";
 
-const PetListItem = (props) => {
-    const petLink = "/id/" + props.pet.id;
-    const imgDesc = "a " + props.pet.category + " of breed " + props.pet.breed + " named " + props.pet.name;
+const storiesListItem = (props) => {
+    const storiesLink = "/id/" + props.stories.id;
+    const imgDesc = "a " + props.stories.category +  " named " + props.stories.name;
     return (
-        <Link className={style.link} to={petLink}>
+        <Link className={style.link} to={storiesLink}>
             <div className={style.card}>
                 <p className={style.hiddenMsg}>LEARN MORE</p>
-                <div className={style.imgContainer}><img src={props.pet.imageUrl} alt={imgDesc}/></div>
+                <div className={style.imgContainer}><img src={props.stories.image} alt={imgDesc}/></div>
                 <div className={style.shortInfo}>
-                    <span className={style.name}>{props.pet.name}</span> {props.pet.age}
+                    <span className={style.name}>{props.stories.name}</span> {props.stories.Born}
                 </div> 
             </div>
         </Link>
     )
 }
 
-PetListItem.propTypes = {
-    pet: PropTypes.object.isRequired
+storiesListItem.propTypes = {
+    stories: PropTypes.object.isRequired
 }
 
-export default PetListItem
+export default storiesListItem
