@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ArticleListItem from "../storiesItem/storiesItem.jsx";
+import storiesListItem from "../storiesListItem/storiesListItem.jsx";
 import styles from "./storiesList.css";
 
 const storiesList = (props) => {
@@ -8,7 +8,7 @@ const storiesList = (props) => {
     <div className={styles.listContainer}>
       <ul>
         {props.stories.map((stories) => (
-          <ArticleListItem stories={stories} key={stories.id} />
+          <storiesListItem stories={stories} key={stories.id} />
         ))}
       </ul>
     </div>
@@ -16,6 +16,6 @@ const storiesList = (props) => {
 };
 
 storiesList.propTypes = {
-    articles: PropTypes.array.isRequired
+    stories: PropTypes.array.isRequired
 }
 export default storiesList;
