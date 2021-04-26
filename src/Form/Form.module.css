@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background:#e2a78f;
+  
+    align-items: center;
+    gap: 20px;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+    list-style-type: none;
+    padding: 0 80px;
+    justify-items: center;
+    height:100%;
+    width: 100%;
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #fdf8f6;
+    color: rgb(53, 50, 49);
+}
+
+  .content {
+  
+    padding: 15px;
+  }
+  
+  b {
+    font-size: 1.3em;
+  }

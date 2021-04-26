@@ -1,68 +1,60 @@
-import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import { Switch, Route } from "react-router-dom";
+import { isEmpty } from "lodash";
 import Home from "./Home/Home.jsx";
-import Foo from "./Foo/Foo.jsx";
-import Bar from "./Bar/Bar.jsx";
-import Baz from "./Baz/Baz.jsx";
+import stories from "./stories/stories.jsx";
+import storiesList from "./storiesList/storiesList.jsx";
+import Form from "./Form/Form.jsx";
+import AboutUs from "./AboutUs/AboutUs.jsx";
 import Error from "./Error/Error.jsx";
-
-// here is some external content. look at the /baz route below
-// to see how this content is passed down to the components via props
-const externalContent = {
-  id: "article-1",
-  title: "An Article",
-  author: "April Bingham",
-  text: "Some text in the article",
-};
+import Footer from "./Footer/Footer.jsx";
+import Header from "./Header/Header.jsx";
+import style from "./App.module.css";
 
 function App() {
-  return (
+  const [fetchedData, setFetchedData] = useState();
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("https://demo6984292.mockable.io/stories");
+      const responseJson = await response.json();
+      setFetchedData(responseJson);
+    };
+
+    if (isEmpty(fetchedData)) {
+      fetchData();
+    }
+
+  }, [fetchedData]);
+
+
+
+  return isEmpty(fetchedData) ? <div>Please wait.</div> : (
     <>
-      <header>
-        <nav>
-          <ul>
-            {/* these links should show you how to connect up a link to a specific route */}
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/foo">Foo</Link>
-            </li>
-            <li>
-              <Link to="/bar/hats/sombrero">Bar</Link>
-            </li>
-            <li>
-              <Link to="/baz">Baz</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/foo" exact component={Foo} />
-        {/* passing parameters via a route path */}
-        <Route
-          path="/bar/:categoryId/:productId"
-          exact
-          render={({ match }) => (
-            // getting the parameters from the url and passing
-            // down to the component as props
-            <Bar
-              categoryId={match.params.categoryId}
-              productId={match.params.productId}
+      <Header/>
+      <div className={style.bodyContainer}>
+        <div>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/aboutus" exact render={() => <AboutUs/>}/>
+            <Route path="/form" exact><Form stories={Object.values(fetchedData)} /></Route>
+
+            <Route
+              exact
+              path={`/id/:id`}
+              render={({ match }) => {
+                return fetchedData[match.params.id] ? <stories
+                  pet={fetchedData[match.params.id]}
+                /> : <Error/>
+              }}
             />
-          )}
-        />
-        <Route
-          path="/baz"
-          exact
-          render={() => <Baz content={externalContent} />}
-        />
-        <Route component={Error} />
-      </Switch>
+            <Route path="/storieslist" exact><storiesList stories={Object.values(fetchedData)} /></Route>
+            <Route component={Error} />
+          </Switch>
+        </div>
+        <Footer/>
+      </div>
     </>
   );
 }

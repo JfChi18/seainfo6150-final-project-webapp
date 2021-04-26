@@ -1,0 +1,28 @@
+.aboutUsPageContainer {
+  background:#dfdad9;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.column {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 22px;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 2em;
+}
+
+
+.subTitle {
+  color: rgb(211, 69, 50);
+  font-size: 45px;
+  line-height: 1.4em;
+  font-family: 'Cubano-Italic', sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  color: #0f346c;
+  text-transform: uppercase;
+}

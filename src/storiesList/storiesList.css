@@ -1,0 +1,31 @@
+.listContainer {
+    background: rgb(155, 155, 155);
+    border: 1px dashed rgb(100,100,100);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px red;
+    margin: 30px 2px;
+}
+
+ul {
+    list-style-type: none
+}
+
+  
+@supports (display: grid) {
+    ul{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media(min-width: 650px) and (max-width: 950px){
+        ul{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media(max-width: 650px){
+        ul{
+            grid-template-columns: 1fr;
+        }
+    }
+}
