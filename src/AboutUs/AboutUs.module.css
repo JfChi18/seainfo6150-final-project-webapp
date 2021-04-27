@@ -4,6 +4,9 @@
   overflow: hidden;
   position: relative;
   z-index: -1;
+  position: fixed;
+  height:800px;
+  bottom:0px;
 }
 
 .column {

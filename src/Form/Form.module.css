@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     background:#e2a78f;
+   
   
     align-items: center;
     gap: 20px;
@@ -12,11 +13,12 @@
     list-style-type: none;
     padding: 0 80px;
     justify-items: center;
-    height:100%;
+    height:1000px;
     width: 100%;
   }
 
   .inputContainer {
+    border:1px solid black;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -36,3 +38,29 @@
   b {
     font-size: 1.3em;
   }
+
+
+  .h2 {position:absolute;
+        left:31%;
+        top: 40%}
+
+
+button {border-radius: 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+}
+
+button:hover {background-color:darkred}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  opacity: 0.75;
+  background-color: #ffffff;
+  padding: .5rem 1rem 1rem 1rem;
+  margin: 2.5rem 0 2.5rem 0;
+}

@@ -14,14 +14,24 @@ const Form = () => {
 		<div className={styles.container}>
 		
 			{submittedForm ? (
-				<div >
+				<div className={styles.h2}>
 					<h2>
           Thank you for submitting your application! We will reach out you soon.
 					</h2>
 				</div>
 			) : (
+
+			<div>
+				
+
+
+
+				<div className={styles.card}>
 				<form onSubmit={onSubmit} className={styles.content}>
-          <h1> <span>Join Us</span></h1>
+
+
+          			
+					<h1> <span>Join Us</span></h1>
 
 					<div className="inputcontainer">
 						<p>Looking to learn more about the equality? Join for free below..</p>
@@ -42,7 +52,7 @@ const Form = () => {
 						</div>
 						<br />
 
-            <label htmlFor="tel">
+            		<label htmlFor="tel">
 							<b> Phone Number: </b>{' '}
 						</label>
 						<div>
@@ -103,10 +113,10 @@ const Form = () => {
 						<div>
 							<b>Would you like to receive text messages from us? </b>
 						</div>
-						<input type="radio" id="yes" name="radio" value="yes" />
+						<input type="radio" id="yes" name="text_message" value="yes" />
 						<label htmlFor="yes">Yes</label>
 						<br />
-						<input type="radio" id="no" name="radio" value="no" />
+						<input type="radio" id="no" name="text_message" value="no" />
 						<label htmlFor="no">No</label>
 						<br />
 						<br />
@@ -114,20 +124,14 @@ const Form = () => {
 						<div>
 							<b>Would you like to receive weekly email posts? </b>
 						</div>
-						<input type="radio" id="yes" name="radio" value="yes" />
+						<input type="radio" id="yes" name="email_post" value="yes" />
 						<label htmlFor="yes">Yes</label>
 						<br />
-						<input type="radio" id="no" name="radio" value="no" />
+						<input type="radio" id="no" name="email_post" value="no" />
 						<label htmlFor="no">No</label>
 						<br />
 						<br />
 
-
-
-						<br />
-						<br />
-            
-       
              
 						<button type="submit">
 							<b>Apply Now</b>
@@ -138,6 +142,9 @@ const Form = () => {
 						<br />
 					</div>
 				</form>
+				</div>
+
+			</div>
 			)}
 		</div>
 	);

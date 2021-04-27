@@ -13,8 +13,7 @@ const Header = () => {
             <div className={style.navBarContainer}>
                 <div className={style.navBarRow}>
                   <Link to="/aboutus" className={style.rowBtn}>About Us</Link>
-                  <Link to="/storieslist" className={style.rowBtn}>Stories</Link>
-                  <Link to="/storieslist" className={style.rowBtn}>Events</Link>
+                  <Link to="/articlelist" className={style.rowBtn}>Stories</Link>
                   <Link to="/form" className={style.rowBtn} >Join Us</Link>
                 </div>
             </div>

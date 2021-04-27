@@ -16,7 +16,7 @@ const Home = (props) => {
     
                 </div>
   
-                <Link className={style.moreBtn} to="/storieslist"><span>Learn More</span></Link>
+                <Link className={style.moreBtn} to="/articlelist"><span>Learn More</span></Link>
             </div>
 
             <div className={style.homeCenter}>
@@ -28,7 +28,8 @@ const Home = (props) => {
             <div className={style.homeBottom}>
             
                  <h1><span>Above all else, we are a community </span></h1>  
-                 <h2>We should know more about our history<br/>We connect each all around world</h2>
+                 <h2>We should know more about our history</h2>
+                 <h2>We connect each all around world</h2>
                
             </div>
 
